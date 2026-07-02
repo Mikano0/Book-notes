@@ -1,5 +1,16 @@
     <form action="/book" method="post">
-        <input name="title" placeholder="Title">
+        <input name="title" placeholder="Title" >
+        <textarea rows="8" cols="30" name="review" placeholder="Write your review here" required> </textarea>
+        <label for="rating">Rating (0/10)</label>
+        <input type="number" name="rating" min="0" max="10" step="0.5" placeholder="7" >
+        <label for="dateread">Date Finished</label>
+        <input type="date" name="dateread">
+        
         <button>Submit</button>
     </form>
     
+<% books.forEach(book => { %>
+    <img src="https://covers.openlibrary.org/b/id/<%= book.cover_id %>-M.jpg" alt="<%= book.title %>">
+
+    <h2><%= book.title %></h2>
+<% }) %>

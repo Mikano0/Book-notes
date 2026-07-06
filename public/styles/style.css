@@ -30,6 +30,17 @@ body{
 
 }
 
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    text-align: center;
+    background-color: #1f2937;;
+
+    color: white;
+}
+
 a{
     text-decoration: none;
 }
@@ -176,3 +187,4 @@ a:hover{
 
     transition: background-color 0.2s;
 }
+

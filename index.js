@@ -36,7 +36,7 @@ app.set("view engine", "ejs");
 async function getAllBooks(){
 	try{
 		const result = await db.query("SELECT * FROM books order by ID ASC")
-		let books = result.rows
+		const books = result.rows
 		books.forEach(book =>{
 		book.date_read = book.date_read.toLocaleDateString("en-GB");
 		});

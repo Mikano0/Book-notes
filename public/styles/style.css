@@ -1,0 +1,162 @@
+body{
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar{
+    width: 100%;
+    height: 70px;
+    
+    display: flex;
+    align-items: center;
+    
+    
+    background-color: #1f2937;
+    border-bottom: 1px solid #e5e5e5;
+
+    color: white;
+
+    box-sizing: border-box;
+    padding: 0 20px;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    transition: 0.2s;
+}
+
+.navbar ul{
+    list-style: none;
+
+    display: flex;
+    gap: 30px;
+    margin-left:  auto;
+
+}
+
+.navbar ul li a{
+    display: inline-block;
+    padding: 10px 15px;
+    
+    background-color: white; 
+
+    text-decoration: none;
+    border-radius: 6px; 
+}
+
+.navbar ul li a:hover{
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
+
+.bookimg{
+    flex-shrink: 0;
+    width: 100px;
+    border-radius: 4px;
+}
+
+.book-card{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 800px;
+
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06)
+}
+
+.book-info{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.book-info h2{
+    margin: 0;
+    font-size: 1.25rem;
+    color: #1f2937; 
+}
+
+.book-info p{
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.book-info h3{
+    margin: 4px 0 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #374151;
+    line-height: 1.4;
+}
+
+.book-form{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    width: 100%;
+    max-width: 500px;
+
+    background-color: white;
+    padding: 24px;
+
+    box-sizing: border-box;
+}
+
+.book-form label{
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+    margin-top: 12px;
+}
+
+.book-form input, .book-form textarea{
+    font-size: 1rem;
+
+    padding: 10px 12px;
+
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.book-form button{
+    margin-top: 20px;
+
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+
+    background-color: #1f2937;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+.book-form button :hover{
+    background-color: #374151;
+}

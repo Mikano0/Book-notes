@@ -37,6 +37,9 @@ async function getAllBooks(){
 	try{
 		const result = await db.query("SELECT * FROM books order by ID ASC")
 		let books = result.rows
+		books.forEach(book =>{
+		book.date_read = book.date_read.toLocaleDateString("en-GB");
+		});
 		return books
 	} catch (err){
 		console.log(err)
@@ -76,7 +79,7 @@ app.get("/", async (req, res) =>{
 app.post("/book", async (req, res) =>{
 	try{
 		const bookTitle = req.body.title
-		const date = req.body.dateread
+		const date = req.body.dateread || new Date();
 		const rating = req.body.rating
 		const review = req.body.review
 
@@ -86,7 +89,7 @@ app.post("/book", async (req, res) =>{
 		console.log("Book not found")
 		return res.redirect("/")
 	}
-	
+
 	await db.query("INSERT INTO books (author, title, series_name, cover_id, date_read, rating, review) VALUES ($1, $2, $3, $4, $5, $6, $7)",
 		[book.author, book.title, book.seriesName, book.coverId, date, rating, review]);
 
@@ -95,16 +98,13 @@ app.post("/book", async (req, res) =>{
 	} catch (err){
 		console.log(err)
 	}
+});
 
+app.get("/new", async (req, res) =>{
+	res.render("book-form.ejs")
 })
-
-
 
 
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);
 });
-
-
-
-

@@ -1,8 +1,29 @@
 <%- include('partials/header.ejs'); -%>
 
  <div class="container">
+    <% if (locals.book){ %>
+    <form class="book-form" action="/edit" method="post">
 
+        <label for="title">Title</label>
+        <input id="title" name="title" value="<%= book.title %>">
+        
+        <label for="review">Review</label>
+        <textarea id="review" rows="8" cols="30" name="review" required><%= book.review %> </textarea>
+
+        <label for="rating">Rating (0/10)</label>
+        <input id="rating" type="number" name="rating" min="0" max="10" step="0.5" value="<%= book.rating %>" >
+
+        <label for="dateread">Date Finished</label>
+        <input id="dateread" type="date" name="dateread" value="<%= book.date_read %>">
+
+        <input type="hidden" name="updateItemId" value="<%= book.id %>">
+            
+        <button type="submit">Submit</button>
+    </form>
+
+    <% } else { %>
     <form class="book-form" action="/book" method="post">
+
         <label for="title">Title</label>
         <input id=title name="title" placeholder="Title">
         
@@ -17,6 +38,8 @@
             
         <button type="submit">Submit</button>
     </form>
+   <% }%>
+
 </div>
 
 

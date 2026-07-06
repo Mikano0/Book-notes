@@ -160,3 +160,19 @@ a:hover{
 .book-form button :hover{
     background-color: #374151;
 }
+
+.delete-button{
+    margin-top: 20px;
+
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}

@@ -7,14 +7,18 @@
             <img class="bookimg"src="https://covers.openlibrary.org/b/id/<%= book.cover_id %>-M.jpg" alt="<%= book.title %>">
             <!-- <input name=deletedItemId  value="<%= book.id %>" hidden> -->
             <div class="book-info">
-                <h2><%= book.title %></h2>
+                <a href="/edit/<%= book.id %>"><h2><%= book.title %></h2></a>
                 <p>Recommend it: <%= book.rating %>. Date read: <%= book.date_read %> </p>
                 <h3><%= book.review %></h3>
             </div>
+            <form action="/delete" method="post">
+                <button type="submit" class="delete-button">Delete</button>
+                <input type="hidden" name="deleteItemId" value="<%= book.id%>">
+            </form>
         </div>
 
         <% }) %>
     <% } %>
  </div>
-
+ 
 <%- include('partials/footer.ejs'); -%>
